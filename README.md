@@ -1,4 +1,4 @@
-# Lugyser           <img src="https://github.com/Alex-Pineda/Lugyser/blob/master/imagenes/Lugyser.JPG" alt="Lugyser" width="32" />
+# Lugyser             <img src="https://github.com/Alex-Pineda/Lugyser/blob/master/imagenes/Lugyser.JPG" alt="Lugyser" width="32" />
 
 
 
