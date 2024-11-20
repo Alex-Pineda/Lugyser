@@ -1,4 +1,5 @@
-# Lugyser       <img src="https://github.com/Alex-Pineda/Lugyser/blob/master/imagenes/Lugyser.JPG" alt="Lugyser" width="32" style="border-radius: 30%;" />
+# Lugyser       <img src="https://github.com/Alex-Pineda/Lugyser/blob/master/imagenes/Lugyser.JPG" alt="Lugyser" width="64" style="border-radius: 50%; margin-bottom: 20px;" />
+
 
 
 
