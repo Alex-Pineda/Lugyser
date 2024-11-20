@@ -1,4 +1,5 @@
-# Lugyser ![Lugyser](https://github.com/Alex-Pineda/Lugyser/blob/master/imagenes/Lugyser.JPG)
+# Lugyser <img src="https://github.com/Alex-Pineda/Lugyser/blob/master/imagenes/Lugyser.JPG" alt="Lugyser" width="32" />
+
 
 
 **Lugyser** es una plataforma en desarrollo diseñada para ofrecer a los usuarios una experiencia única al encontrar lugares increíbles
