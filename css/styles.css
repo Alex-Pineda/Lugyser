@@ -1,0 +1,228 @@
+:root {
+    --primary-color: #031d03;
+    --secondary-color: #00AEEF;
+    --button-bg-color: #d6d65d;
+    --footer-bg-color: #17ad377a;
+    --text-color: white;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    height: 100vh;
+}
+
+.header {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 1318px;
+    height: 30px;
+    gap: 30px;
+}
+
+.logo {
+    height: 35px;
+    border-radius: 50%;
+    margin-left: -10px;
+    margin-top: 2px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    padding: 4px 9px;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    width: 30%;
+    margin-right: 20px;
+    min-width: 20%;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.nav-links a, .footer p {
+    color: var(--text-color);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-items: center;
+    gap: 10%;
+    align-items: center;
+    font-size: 1rem;
+    justify-content: space-evenly;
+    margin-left: 6%;
+}
+.nav {
+    height: 30%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--primary-color); /* Color inicial */
+    text-decoration: none; /* Elimina el subrayado */
+    padding: 10px 20px; /* Espacio alrededor de los enlaces */
+    transition: color 0.3s ease; /* Suaviza el cambio de color */
+    white-space: nowrap;
+}
+
+.nav:hover {
+color: rgb(207, 30, 30);
+}
+.nav-buttons {
+    gap: 8px; /* Espaciado entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Alinea los botones verticalmente */
+    height: 25%;
+    width: 25%;
+    display: flex;
+    justify-items: right;
+    margin-left: 12.3%;
+}
+    
+.main-content {
+    background-image: url("https://images.unsplash.com/photo-1622015663319-e97e697503ee?q=80&w=1377&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    color: var(--secondary-color);
+    height: 446.5px;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    position: relative; /* Necesario para posicionamiento absoluto */
+}
+.titulo {
+    display: flex;
+    margin: auto; /* Elimina el margen predeterminado */
+    padding: 50px -10%; /* Agrega algo de espacio interno */
+    color: #ffffff;
+    font-size: 2.7rem; /* Ajusta el tamaño de la fuente según sea necesario */
+    position: absolute;
+    z-index: 1; /* Asegura que el título quede por encima de otros elementos */
+    font-family:'Times New Roman', Times, serif; /* Nueva fuente solo para los botones */
+    align-items: center;
+    transform: translate(-50%, 0);
+    left: 50%;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones se ajusten a la siguiente fila */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 40px; /* Espacio entre los botones */
+    margin-top: 60px;; /* Espacio entre los botones y el título */
+}
+.buttons-container button {
+    flex: 1 1 calc(33.33% - 30px);
+    background-color: #d3d330e3;
+    border: transparent;
+    border-radius: 15px;
+    padding: 25px 15px;
+    font-size: 22px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.4s;
+    max-width: 300px;
+    text-decoration: underline;
+}
+
+.buttons-container button:hover {
+    background-color: rgb(161, 252, 252); /* Efecto al pasar el mouse */
+}
+
+.footer {
+    display: flex; /* Activa Flexbox */
+    flex-direction: row; /* Organiza los elementos en dos columnas */
+    justify-content: space-between; /* Espaciado uniforme entre columnas */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 15px;
+    background-color: var(--primary-color); /* Usa tu color primario */
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+    gap: 8%; /* Espaciado entre columnas */
+}
+.footer .social-icons {
+    flex: 0.15; /* Ocupa espacio proporcional */
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 30px; /* Espaciado entre los iconos */
+    justify-items: center; /* Centra horizontalmente los íconos */
+    align-items: center; /* Centra verticalmente */
+    font-size: 1.6rem; /* Tamaño de los íconos */
+    margin-left: 4%;
+}
+.footer .parrafo {
+    flex: 1; /* Ocupa espacio proporcional */
+    text-align: center; /* Alinea el texto a la izquierda */
+    font-size: 0.8rem;
+    color: #333;
+    line-height: 1.5;
+    margin-right: 4%;
+
+}
+
+.social-icons a {
+    width: 50%; /* Cada ícono ocupa la mitad del ancho */
+    display: flex; /* Activa flex para centrar cada ícono */
+    justify-content: center; /* Centra horizontalmente el ícono */
+    color: #817d7d; /* Color inicial de los íconos */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-icons i:hover {
+    color: var(--secondary-color);
+}
+
+/* Media queries para reducir el tamaño del texto */
+@media (max-width: 1200px) {
+    .titulo, .buttons-container {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 850px) {
+    .titulo, .buttons-container {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 663px) {
+    .titulo, .buttons-container {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .titulo, .buttons-container {
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .social-icons, .parrafo {
+        width: 100%; /* Ocupa el ancho completo */
+        text-align: center; /* Centra el contenido */
+        gap: 3%;
+    }
+}
