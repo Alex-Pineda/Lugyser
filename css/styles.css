@@ -18,16 +18,21 @@ body {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    width: 1318px;
-    height: 30px;
-    gap: 30px;
+    width: 100%;
+    height: 45px;
+    gap: 1%;
+    box-sizing: border-box;
+    text-align:center;
+    border-radius: 7px;
+    margin: 0;
+
 }
 
 .logo {
-    height: 35px;
+    height: 30px;
     border-radius: 50%;
     margin-left: -10px;
-    margin-top: 2px;
+    margin-top: 5px;
 }
 
 .search-bar {
@@ -38,8 +43,8 @@ body {
     padding: 4px 9px;
     border: none;
     cursor: pointer;
-    height: 20px;
-    width: 30%;
+    height: 70%;
+    width: 20%;
     margin-right: 20px;
     min-width: 20%;
 }
@@ -48,7 +53,7 @@ body {
     border: none;
     outline: none;
     width: 100%;
-    padding: 5px;
+    padding: 3px;
 }
 
 .nav-links a, .footer p {
@@ -60,11 +65,11 @@ body {
 .nav-links {
     display: flex;
     justify-items: center;
-    gap: 10%;
     align-items: center;
     font-size: 1rem;
-    justify-content: space-evenly;
-    margin-left: 6%;
+    margin: 0;
+    align-items: self-end;
+
 }
 .nav {
     height: 30%;
@@ -83,32 +88,47 @@ body {
 color: rgb(207, 30, 30);
 }
 .nav-buttons {
-    gap: 8px; /* Espaciado entre los botones */
-    justify-content: center; /* Centra los botones horizontalmente */
-    align-items: center; /* Alinea los botones verticalmente */
-    height: 25%;
-    width: 25%;
+    gap: 4%;
+    justify-content:right;
+    width: 100%;
     display: flex;
-    justify-items: right;
-    margin-left: 12.3%;
+    margin: 0;
+    border: none;
+    margin-left: 20px;        
 }
+.iniciar, .registrar {
+    border: none;
+    border-radius: 10px;
+    height: 20px;
+    display: inline-block;
+    width: 80px;
+    cursor: pointer;
+}
+.iniciar:hover {
+    background-color: #926d06e7;
+}
+.registrar:hover {
+    background-color: #926d06e7;
     
+}
 .main-content {
     background-image: url("https://images.unsplash.com/photo-1622015663319-e97e697503ee?q=80&w=1377&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: center;
     color: var(--secondary-color);
-    height: 446.5px;
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column; /* Asegura que los elementos estén en columna */
     justify-content: center; /* Centra verticalmente */
     align-items: center; /* Centra horizontalmente */
-    position: relative; /* Necesario para posicionamiento absoluto */
+    position: relative;/* Necesario para posicionamiento absoluto */
+    border-radius: 5px;
 }
 .titulo {
     display: flex;
     margin: auto; /* Elimina el margen predeterminado */
-    padding: 50px -10%; /* Agrega algo de espacio interno */
+    padding: 70px -10%; /* Agrega algo de espacio interno */
     color: #ffffff;
     font-size: 2.7rem; /* Ajusta el tamaño de la fuente según sea necesario */
     position: absolute;
@@ -118,7 +138,7 @@ color: rgb(207, 30, 30);
     transform: translate(-50%, 0);
     left: 50%;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 90px;
     
 }
 .buttons-container {
@@ -126,14 +146,15 @@ color: rgb(207, 30, 30);
     flex-wrap: wrap; /* Permite que los botones se ajusten a la siguiente fila */
     justify-content: center; /* Centra los botones horizontalmente */
     gap: 40px; /* Espacio entre los botones */
-    margin-top: 60px;; /* Espacio entre los botones y el título */
+    margin-top: 60px; /* Espacio entre los botones y el título */
+
 }
 .buttons-container button {
     flex: 1 1 calc(33.33% - 30px);
     background-color: #d3d330e3;
     border: transparent;
     border-radius: 15px;
-    padding: 25px 15px;
+    padding: 3% 5%;
     font-size: 22px;
     text-align: center;
     cursor: pointer;
