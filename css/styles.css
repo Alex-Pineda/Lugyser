@@ -247,7 +247,7 @@ color: rgb(207, 30, 30);
     .footer {
         flex-direction: column; /* Cambia a columna en pantallas pequeñas */
         align-items: center;
-        gap: 20%;
+        gap: 3%;
     }
 
     .social-icons, .parrafo {
@@ -255,4 +255,12 @@ color: rgb(207, 30, 30);
         text-align: center; /* Centra el contenido */
         gap: 3%;
     }
+
+    @media (max-width: 320px) {
+        .footer {
+            flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+            align-items: center;
+            gap: 3%;
+        }
+}
 }

@@ -1,0 +1,92 @@
+/* Estilo general de la página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #cedad3); /* Fondo general */
+}
+
+/* Contenedor del formulario */
+.login-container {
+    background: linear-gradient(180deg, #a8e6a1, #6abf69); /* Fondo degradado del formulario */
+    border-radius: 15px;
+    padding: 30px 20px;
+    width: 230px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Títulos */
+h2 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #2c3e50; /* Gris oscuro azulino */
+    text-align: center;
+}
+
+/* Campos de entrada */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #bdc3c7; /* Borde gris claro */
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #95a5a6; /* Placeholder gris claro */
+}
+
+/* Contenedor de los botones */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* Botones */
+button {
+    padding: 9px 10px;
+    border: none;
+    border-radius: 5px;
+    color: #fff; /* Texto blanco */
+    font-size: 14px;
+    cursor: pointer;
+    flex: 1; /* Asegura que ambos botones ocupen el mismo espacio */
+    margin: 0 5px; /* Separación entre botones */
+}
+
+/* Botón "Iniciar sesión" */
+.btn-login {
+    background-color: #c0392b; /* Rojo oscuro */
+}
+.btn-login:hover {
+    background-color: #e74c3c; /* Rojo claro */
+}
+
+/* Botón "Registrarse" */
+.btn-register {
+    background-color: #d4ac0d; /* Amarillo oscuro */
+}
+.btn-register:hover {
+    background-color: #f1c40f; /* Amarillo claro */
+}
+
+/* Enlace "Olvide mi contraseña" */
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #2c3e50; /* Gris oscuro azulino */
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
