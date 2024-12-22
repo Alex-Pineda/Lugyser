@@ -1,0 +1,140 @@
+        body {
+            background: linear-gradient(15deg, var(--terciary-color), var(--footer-bg-color));
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-width: 920px;
+        }
+
+        .header img {
+            height: 40px;
+        }
+        .header .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+        .header .search-bar input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .header nav a {
+            color: white;
+            margin: 0 px;
+            text-decoration: none;
+        }
+        .header .auth-buttons button {
+            background-color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .header .auth-buttons button:nth-child(2) {
+            background-color: #00a94f;
+            color: white;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            gap: 5px;
+            margin-top: 5px;
+        }
+        .date-picker {
+            margin-top: 40px;
+            background-color: #a4a568;
+            padding: 15px;
+            width: 250px;
+            height: 270px;
+            border-radius: 15px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .date-picker h3 {
+            margin: 0 0 10px 0;
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+        }
+        .date-picker input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 18px;
+            background-color: rgb(244, 248, 209);
+            text-decoration-color: rgb(112, 11, 11);
+        }
+        .date-picker button {
+            display: flex;
+            color: white;
+            padding: 10px 30px;
+            background-color: #2b4d3b;  
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            text-align: center;
+            justify-content: center;
+            width: 45%;
+        }
+        .reservation-details{
+            margin-top: 20px;
+            margin-left: 1%;
+            margin-right: 1%;
+            padding: 15px;
+            width: 240px;
+            height: 250px;
+            min-width: 200px;
+        }
+
+        .reservation-details h2 {
+            margin: 0;
+        }
+        .reservation-details p {
+            margin: 5px 0;
+        }
+        .reservation-details select, .reservation-details button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .reservation-details button {
+            background-color: #39684f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        button{
+            width: 115px;
+            margin-right: 4px;
+            text-align: center;
+        }
+
+        .reservation-details button.cancel {
+            background-color: #b17a14;
+            border-radius: 20px;
+        }
+        .image-section img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            max-width: 100%;
+            border-radius: 10px;
+            height: 300px;
+            margin-left: 1%;
+            margin-right: 1%;
+            margin-top: 40px;
+        }

@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #cedad3); /* Fondo general */
+    background: linear-gradient(45deg, #3b3f2b, #266353); /* Fondo general */
 }
 
 /* Contenedor del formulario */
