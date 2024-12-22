@@ -30,7 +30,7 @@ El proyecto utiliza las siguientes tecnologías:
   - JavaScript  
 
 - **Backend:** *(en planificación)*  
-  - Lenguaje: **Java (con Spring Boot)**  
+  - Lenguaje: **PHP o Java (con Spring Boot)**  
   - Base de datos: **MySQL**  
 
 - **Infraestructura y herramientas:**  
