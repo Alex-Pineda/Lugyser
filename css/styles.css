@@ -6,16 +6,22 @@
     --footer-bg-color: #17ad377a;
     --text-color: white;
 }
+html{
+    background: linear-gradient(-90deg, #3b3f2b, #266353); /* Fondo general */
+}
 
 body {
+    background: linear-gradient(-90deg, #3b3f2b, #266353); /* Fondo general */
+    width: 100%;
     justify-content: center; /* Centra verticalmente el contenido */
     align-items: center; /* Centra horizontalmente el contenido */
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    padding: 0;
     height: 100vh;
     width: 100%;
-    min-width: 920px;
+    min-width: 880px; /* Define el ancho mínimo (ajústalo según tus necesidades) */
+    box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
+
 }
 
 .header {
@@ -30,6 +36,8 @@ body {
     text-align:center;
     border-radius: 7px;
     margin: 0;
+    min-width: 660px; /* Define el ancho mínimo (ajústalo según tus necesidades) */
+    box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
 
 }
 
@@ -190,15 +198,22 @@ color: rgb(207, 30, 30);
     font-size: 0.8rem;
     color: #eef1ea;
     line-height: 1.5;
-    margin-top: 10px;
+    margin-top: 15px;
+    width: 85%;
 }
+
+.politicas {
+    color: rgb(224, 152, 56);
+}
+
 .social-icons a {
     width: 100%; /* Cada ícono ocupa la mitad del ancho */
     display: flex; /* Activa flex para centrar cada ícono */
     justify-content: center; /* Centra horizontalmente el ícono */
     color: #12055c; /* Color inicial de los íconos */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
+    cursor: pointer;
 }
 
 .social-icons i:hover {
@@ -232,7 +247,10 @@ color: rgb(207, 30, 30);
     .social-icons, .parrafo {
         width: 100%; /* Ocupa el ancho completo */
         text-align: center; /* Centra el contenido */
-        gap: 3%;
+        gap: 2px;
+    }
+    .social-icons{
+        width: 20%;
     }
 
 }

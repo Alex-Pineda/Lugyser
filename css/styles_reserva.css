@@ -1,140 +1,183 @@
-        body {
-            background: linear-gradient(15deg, var(--terciary-color), var(--footer-bg-color));
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            min-width: 920px;
-        }
+body {
+    background: linear-gradient(-90deg, #3b3f2b, #266353); /* Fondo general */
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-width: 850px;
+    height: 100vh;
+    min-height: 100vh; /* Mantiene el ajuste dinámico en pantallas pequeñas */
+}
+html, body {
+    background: linear-gradient(-90deg, #3b3f2b, #266353); /* Fondo general */
+    min-width: 1041px; /* Define el ancho mínimo */
+    box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
+    height: 100vh;
+    width: 100%;
+}
 
-        .header img {
-            height: 40px;
-        }
-        .header .search-bar {
-            display: flex;
-            align-items: center;
-            background-color: white;
-            border-radius: 20px;
-            padding: 5px 10px;
-        }
-        .header .search-bar input {
-            border: none;
-            outline: none;
-            padding: 5px;
-            margin-right: 10px;
-        }
+.main-content {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio restante entre el header y el footer */
+    display: flex;
+    gap: 40px;
+    justify-content: space-evenly; /* Espaciado entre los elementos */
+    align-items: flex-start;
+    padding: 30px 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-        .header nav a {
-            color: white;
-            margin: 0 px;
-            text-decoration: none;
-        }
-        .header .auth-buttons button {
-            background-color: white;
-            border: none;
-            padding: 5px 10px;
-            margin-left: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .header .auth-buttons button:nth-child(2) {
-            background-color: #00a94f;
-            color: white;
-        }
-        .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: space-around;
-            padding: 30px;
-            gap: 5px;
-            margin-top: 5px;
-        }
-        .date-picker {
-            margin-top: 40px;
-            background-color: #a4a568;
-            padding: 15px;
-            width: 250px;
-            height: 270px;
-            border-radius: 15px;
-            margin-left: 1%;
-            margin-right: 1%;
-        }
-        .date-picker h3 {
-            margin: 0 0 10px 0;
-            margin-top: 5px;
-            display: flex;
-            justify-content: center;
-        }
-        .date-picker input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 7px;
-            font-size: 18px;
-            background-color: rgb(244, 248, 209);
-            text-decoration-color: rgb(112, 11, 11);
-        }
-        .date-picker button {
-            display: flex;
-            color: white;
-            padding: 10px 30px;
-            background-color: #2b4d3b;  
-            border: none;
-            cursor: pointer;
-            border-radius: 20px;
-            text-align: center;
-            justify-content: center;
-            width: 45%;
-        }
-        .reservation-details{
-            margin-top: 20px;
-            margin-left: 1%;
-            margin-right: 1%;
-            padding: 15px;
-            width: 240px;
-            height: 250px;
-            min-width: 200px;
-        }
+.date-picker {
+    margin-top: 19px;
+    background-color: #a4a568;
+    padding: 15px;
+    width: 250px;
+    height: 200px;
+    border-radius: 15px;
+}
 
-        .reservation-details h2 {
-            margin: 0;
-        }
-        .reservation-details p {
-            margin: 5px 0;
-        }
-        .reservation-details select, .reservation-details button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .reservation-details button {
-            background-color: #39684f;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 20px;
-        }
-        button{
-            width: 115px;
-            margin-right: 4px;
-            text-align: center;
-        }
+.date-picker h3 {
+    margin: 0 0 10px 0;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
 
-        .reservation-details button.cancel {
-            background-color: #b17a14;
-            border-radius: 20px;
-        }
-        .image-section img {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 500px;
-            max-width: 100%;
-            border-radius: 10px;
-            height: 300px;
-            margin-left: 1%;
-            margin-right: 1%;
-            margin-top: 40px;
-        }
+.date-picker input {
+    width: 90%;
+    padding: 7px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: rgb(244, 248, 209);
+}
+
+.reservation-details select, .reservation-details {
+    width: 280px;
+    padding: 10px 2px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.cantidad-personas{
+    width: 270px;
+    padding: 10px 2px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.reservation-details button {
+    background-color: #b17a14;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 96%;
+    height: 30px;
+    margin: 5px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.reservation-details button.cancel {
+    background-color: #13381c;
+    border-radius: 20px;
+}
+.descripcion {
+    flex-wrap: 1;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    margin-left: 4%;
+    box-sizing: border-box;
+    min-width: 200px;
+    color: #b9e3ee;
+}
+
+.image-section {
+    display: flex;
+    justify-content:center;
+    height: 300px;
+    box-sizing: border-box; 
+}
+
+.image-section img {
+    margin-top: 19px;
+    width: 450px;
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    height: 300px;
+    justify-content: flex-start;
+    object-fit: cover;  /* Mantiene el aspecto de la imagen, recortando si es necesario */
+    box-sizing: border-box; 
+    border-radius: 10%;
+}
+
+.total {
+    display: flex;
+    text-align: center;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    
+}
+.ubicacion{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: rgb(224, 152, 56);
+    margin-top: 20px;
+}
+.ubicacion :hover {
+    color: rgb(117, 82, 37);
+}
+.whatsapp-icon {
+    position: fixed;
+    right: 2%;
+    background-color: #080808;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  .whatsapp-icon:hover {
+    transform: scale(1.20);
+  }
+  
+  .whatsapp-icon i {
+    font-size: 1.5rem;
+  }
+
+@media (max-width: 768px) { /* Ajusta el tamaño de pantalla según sea necesario */
+    .image-section {
+        height: 200px;  /* Ajusta la altura para pantallas más pequeñas */
+    }
+
+    .image-section img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+    }
+    .descripcion {
+        display: flex;
+        align-items: center;
+        width: 350px;  /* Hace que el contenedor ocupe el 100% de la pantalla */
+        height: auto; /* Elimina la altura fija */
+        min-width: 0;  /* Evita que herede el min-width del body */
+    }
+    
+    body {
+        min-height: 100vh; /* Mantiene el ajuste dinámico en pantallas pequeñas */
+        
+    }
+
+    }
+
