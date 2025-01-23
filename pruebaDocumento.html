@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfica de Archivos por Usuario</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            text-align: center;
+        }
+        .file-input, .category-select, .user-select, .add-button, .description-input, .priority-select, .location-input {
+            margin: 10px 0;
+        }
+        canvas {
+            margin-top: 20px;
+        }
+        .comments {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .comment {
+            margin: 5px;
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .comment:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gráfica de Archivos por Usuario - Director de Seguridad</h1>
+        <input type="file" id="fileInput" class="file-input" />
+        <select id="categorySelect" class="category-select">
+            <option value="alteracionOrdenPublico">Alteración del Orden Público</option>
+            <option value="estudiosSeguridad">Estudios de Seguridad</option>
+            <option value="emergencias">Emergencias</option>
+            <option value="zonasCriticas">Zonas Críticas</option>
+            <option value="otros">Otros</option>
+        </select>
+        <select id="userSelect" class="user-select">
+            <option value="tobon">Tobón</option>
+            <option value="posada">Posada</option>
+            <option value="pineda">Pineda</option>
+            <option value="marco">Marco</option>
+        </select>
+        <input type="text" id="descriptionInput" class="description-input" placeholder="Descripción del archivo" />
+        <select id="prioritySelect" class="priority-select">
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+        </select>
+        <input type="text" id="locationInput" class="location-input" placeholder="Ubicación o Sede" />
+        <button id="addButton" class="add-button">Agregar a Gráfica</button>
+        <canvas id="fileChart" width="400" height="200"></canvas>
+        
+        <div class="comments">
+            <h3>Comentarios de Archivos Subidos</h3>
+            <div id="commentsContainer"></div>
+        </div>
+    </div>
+
+    <script>
+        // Referencias a elementos HTML
+        const fileInput = document.getElementById("fileInput");
+        const categorySelect = document.getElementById("categorySelect");
+        const userSelect = document.getElementById("userSelect");
+        const descriptionInput = document.getElementById("descriptionInput");
+        const prioritySelect = document.getElementById("prioritySelect");
+        const locationInput = document.getElementById("locationInput");
+        const addButton = document.getElementById("addButton");
+        const fileChart = document.getElementById("fileChart");
+        const commentsContainer = document.getElementById("commentsContainer");
+
+        // Datos iniciales para la gráfica
+        const chartData = {
+            labels: ["Alteración del Orden Público", "Estudios de Seguridad", "Emergencias", "Zonas Críticas", "Otros"],
+            datasets: [
+                {
+                    label: "Tobón",
+                    data: [0, 0, 0, 0, 0],
+                    backgroundColor: "rgba(255, 99, 132, 0.6)"
+                },
+                {
+                    label: "Posada",
+                    data: [0, 0, 0, 0, 0],
+                    backgroundColor: "rgba(54, 162, 235, 0.6)"
+                },
+                {
+                    label: "Pineda",
+                    data: [0, 0, 0, 0, 0],
+                    backgroundColor: "rgba(255, 206, 86, 0.6)"
+                },
+                {
+                    label: "Marco",
+                    data: [0, 0, 0, 0, 0],
+                    backgroundColor: "rgba(75, 192, 192, 0.6)"
+                }
+            ]
+        };
+
+        // Array para almacenar los archivos y sus detalles
+        const filesData = [];
+
+        // Crear gráfica
+        const chart = new Chart(fileChart, {
+            type: "bar",
+            data: chartData,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        beginAtZero: true,
+                        stacked: true
+                    }
+                }
+            }
+        });
+
+        // Evento para agregar archivo a la categoría y usuario
+        addButton.addEventListener("click", () => {
+            const file = fileInput.files[0];
+            const category = categorySelect.value;
+            const user = userSelect.value;
+            const description = descriptionInput.value;
+            const priority = prioritySelect.value;
+            const location = locationInput.value;
+
+            if (!file) {
+                alert("Por favor selecciona un archivo.");
+                return;
+            }
+
+            // Obtener la fecha y la hora actuales
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+
+            // Mapeo de categorías a índices
+            const categoryIndex = {
+                "alteracionOrdenPublico": 0,
+                "estudiosSeguridad": 1,
+                "emergencias": 2,
+                "zonasCriticas": 3,
+                "otros": 4
+            };
+
+            // Mapeo de usuarios a índices
+            const userIndex = {
+                "tobon": 0,
+                "posada": 1,
+                "pineda": 2,
+                "marco": 3
+            };
+
+            // Actualizar datos de la gráfica
+            const userDatasetIndex = userIndex[user];
+            const categoryDataIndex = categoryIndex[category];
+            chartData.datasets[userDatasetIndex].data[categoryDataIndex]++;
+
+            // Almacenar la información del archivo
+            const fileInfo = {
+                name: file.name,
+                category: category,
+                user: user,
+                description: description,
+                priority: priority,
+                location: location,
+                date: date,
+                time: time,
+                fileUrl: URL.createObjectURL(file) // Crear una URL temporal para el archivo
+            };
+            filesData.push(fileInfo);
+
+            // Mostrar los comentarios en el contenedor
+            updateComments();
+
+            // Actualizar la gráfica
+            chart.update();
+
+            // Limpiar selección de archivo
+            fileInput.value = "";
+            descriptionInput.value = "";
+            locationInput.value = "";
+            alert(`Archivo "${file.name}" agregado a "${category}" por "${user}" el ${date} a las ${time}.`);
+        });
+
+        // Función para mostrar los comentarios con los detalles
+        function updateComments() {
+            commentsContainer.innerHTML = ""; // Limpiar los comentarios existentes
+
+            // Crear los comentarios con enlaces
+            filesData.forEach(file => {
+                const comment = document.createElement("div");
+                comment.classList.add("comment");
+                comment.innerHTML = `
+                    <strong>${file.category}</strong> - ${file.user} (${file.date} ${file.time}) - Prioridad: ${file.priority}
+                    <br><small>${file.description}</small>
+                    <br><small>Ubicación: ${file.location}</small>
+                    <br><small>${file.name}</small>
+                `;
+
+                // Evento para mostrar el archivo al pulsar la etiqueta
+                comment.addEventListener("click", () => {
+                    window.open(file.fileUrl, "_blank"); // Abrir el archivo en una nueva ventana
+                });
+
+                commentsContainer.appendChild(comment);
+            });
+        }
+    </script>
+</body>
+</html>

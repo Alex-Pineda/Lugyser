@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de proveedor</title>
+    <style>
+        body {
+            background: linear-gradient(-90deg, #3b3f2b, #266353); /* Fondo general */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .register-container {
+            background: linear-gradient(180deg, #a8e6a1, #6abf69);
+            border-radius: 20px;
+            padding: 20px;
+            width: 400px; /* Ajusta el ancho para hacerlo más rectangular */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .seleccion {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            max-width: calc(50% - 10px); /* 50% del contenedor menos el espacio entre */
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #bdc3c7;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+        .ubicacion{
+            max-width: 100%;
+        }
+
+        textarea {
+            max-width: 100%; /* Ocupa toda la fila */
+            resize: none;
+        }
+
+        .button-container {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        .btn-cancel {
+            background-color: #c0392b;
+        }
+
+        .btn-cancel:hover {
+            background-color: #e74c3c;
+        }
+
+        .btn-register {
+            background-color: #d4ac0d;
+        }
+
+        .btn-register:hover {
+            background-color: #5b5726;
+        }
+
+        p.terms {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        p.terms a {
+            color: #0000ff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <form class="register-container" method="post" action="registroFinca">
+        <h2>Registrar Finca</h2>
+        <div class="seleccion">
+            <input name="nombre_finca" type="text" placeholder="Nombre de la finca" required />
+            <input name="habitaciones" type="number" placeholder="Número de habitaciones" required min="1" />
+            <input name="banos" type="number" placeholder="Número de baños" required min="1" />
+            <input name="piscinas" type="number" placeholder="Número de piscinas" required min="0" />
+            <select name="juegos_infantiles" required>
+                <option value="" disabled selected>Juegos infantiles</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            <select name="zonas_verdes" required>
+                <option value="" disabled selected>Zonas verdes</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+            </select>
+            <textarea name="descripcion" placeholder="Descripción de la finca (maximo 70 palabras)" rows="4" required></textarea>
+            <input class="ubicacion" name="ubicacion" type="text" placeholder="Ubicación o dirección" required />
+        </div>
+        <div class="button-container">
+            <button type="button" class="btn-cancel" onclick="window.history.back()">Cancelar</button>
+            <button type="submit" class="btn-register">Registrar</button>
+        </div>
+        <p class="terms">
+            Al registrarte, aceptas los <a href="terminos.jsp">términos y condiciones</a>.
+        </p>
+    </form>
+</body>
+</html>
