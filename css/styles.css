@@ -69,7 +69,7 @@ body {
     padding: 3px;
 }
 
-.nav-links a, .footer p {
+.a, .footer p {
     color: var(--text-color);
     margin: 0;
     text-decoration: none;
