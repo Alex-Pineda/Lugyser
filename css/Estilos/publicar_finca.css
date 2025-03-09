@@ -1,0 +1,67 @@
+body {
+  background-color: #1a1a1a;
+  font-family: 'Arial', sans-serif;
+}
+
+.card {
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0px 0px 8px rgba(255, 193, 7, 0.5);
+}
+
+textarea.form-control {
+  resize: none;
+}
+
+button {
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.text-primary {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.text-primary:hover {
+  text-decoration: underline;
+}
