@@ -11,6 +11,11 @@
         <div class="card bg-light text-dark">
             <div class="card-body">
                 <h2 class="card-title text-center">Fincas Publicadas</h2>
+                <nav class="nav justify-content-center mb-4">
+                    <a class="nav-link" href="listar_fincas.php">Ver Fincas Publicadas</a>
+                    <a class="nav-link" href="publicar_finca.php">Publicar Finca</a>
+                    <a class="nav-link" href="reservar_finca.php">Reservar Finca</a>
+                </nav>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered">
                         <thead class="thead-dark">
