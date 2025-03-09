@@ -1,6 +1,6 @@
 <?php
 include_once '../config/database.php';
-include_once '../models/Lugar.php';
+include_once '../models/listar_fincas.php';
 
 class LugarController {
     private $db;

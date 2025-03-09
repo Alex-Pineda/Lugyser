@@ -1,6 +1,6 @@
 <?php
 // Incluir encabezado y conexión a la base de datos si es necesario
-include '../includes/header.php';
+include '../config/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ include '../includes/header.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservar</title>
+    <title>Reservar Finca</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/styles_reserva.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -18,25 +18,26 @@ include '../includes/header.php';
     <div id='header-container'></div> <!-- Aquí se insertará el encabezado -->
     <main class="main-content">
         <div>
-            <form action="procesar_reserva.php" method="POST">
+            <h1>Reservar Finca</h1>
+            <form action="../controllers/reservar_finca_controlador.php" method="POST">
                 <div class="date-picker">
                     <h3>Seleccionar días</h3><br>
-                    <label for="start-date">Fecha inicio / final</label>
-                    <input id="start-date" name="start-date" type="date" required>
-                    <input id="end-date" name="end-date" type="date" required>
+                    <label for="start-date">Fecha de inicio:</label>
+                    <input id="start-date" name="start-date" type="date" required><br>
+                    <label for="end-date">Fecha de fin:</label>
+                    <input id="end-date" name="end-date" type="date" required><br>
                 </div>
                 <div class="reservation-details">
-                    <label for="people-count">Cantidad personas mayores de 5 años</label><br>
-                    <input class="cantidad-personas" name="people-count" type="number" placeholder="Escribe el número de personas" required>
-                    <br><br>
-                    <label for="payment-method">Método de pago</label>
+                    <label for="people-count">Número de personas:</label><br>
+                    <input class="cantidad-personas" id="people-count" name="people-count" type="number" placeholder="Escribe el número de personas" required><br><br>
+                    <label for="payment-method">Método de pago:</label>
                     <select id="payment-method" name="payment-method" required>
-                        <option>PayPal</option>
-                        <option>PSE</option>
-                        <option>Tarjeta de crédito</option>
+                        <option value="credit-card">Tarjeta de crédito</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="bank-transfer">Transferencia bancaria</option>
                         <option>Nequi</option>
-                    </select>
-                    <button class="botones" type="submit">Confirmar</button>
+                    </select><br>
+                    <button class="botones" type="submit">Reservar</button>
                     <button class="cancel" type="reset">Cancelar</button>
                 </div>
             </form>
@@ -55,6 +56,31 @@ include '../includes/header.php';
                     🏡🌞 ¡Te esperamos!</p>
                 <a class="ubicacion" href="#">Ver ubicación</a>
             </div>
+        </div>
+        <div class="lugar-section">
+            <h2>Fincas Disponibles</h2>
+            <?php
+            $query = "SELECT * FROM lugar WHERE disponibilidad_lugar = 1";
+            $result = $conn->query($query);
+
+            if ($result === false) {
+                echo "<p>Error en la consulta: " . $conn->error . "</p>";
+            } elseif ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='lugar-item'>";
+                    echo "<h3>" . $row['nombre_lugar'] . "</h3>";
+                    echo "<img src='data:image/jpeg;base64," . base64_encode($row['imagen_lugar']) . "' alt='" . $row['nombre_lugar'] . "' width='200' height='150'/>";
+                    echo "<p>Tipo: " . $row['tipo'] . "</p>";
+                    echo "<p>Ubicación: " . $row['ubicacion_lugar'] . "</p>";
+                    echo "<p>Descripción: " . $row['descripcion_lugar'] . "</p>";
+                    echo "<p>Habitaciones: " . $row['cantidad_habitaciones'] . "</p>";
+                    echo "<p>Precio: $" . $row['precio_lugar'] . "</p>";
+                    echo "</div>";
+                }
+            } else {
+                echo "<p>No hay fincas disponibles en este momento.</p>";
+            }
+            ?>
         </div>
         <a href="https://wa.me/tuNumeroDeTelefono" class="whatsapp-icon" target="_blank">
             <i class="fab fa-whatsapp"></i>
