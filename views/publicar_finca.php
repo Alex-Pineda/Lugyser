@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de proveedor</title>
     <link rel="stylesheet" href="../css/Estilos/publicar_finca.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body class="bg-dark text-white">
     <div class="container mt-5">
         <div class="card bg-light text-dark">
             <div class="card-body">
                 <h2 class="card-title text-center">Registrar Finca</h2>
+                <nav class="nav justify-content-center mb-4">
+                    <a class="nav-link" href="listar_fincas.php">Ver Fincas Publicadas</a>
+                    <a class="nav-link" href="publicar_finca.php">Publicar Finca</a>
+                    <a class="nav-link" href="reservar_finca.php">Reservar Finca</a>
+                </nav>
                 <form method="post" action="http://192.168.1.7:5500/public/index.php?action=registerLugar">
                     <div class="form-row">
                         <div class="form-group col-md-6">
